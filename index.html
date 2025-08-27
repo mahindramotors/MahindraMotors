@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahindra Motors Ambala - Electric Scooters</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .contact-banner {
+            background: #28a745;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-banner a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-banner a:hover {
+            text-decoration: underline;
+        }
+
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+            background: #25D366;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e3c72;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #28a745;
+            border-radius: 2px;
+        }
+
+        .brand-section {
+            background: white;
+            margin: 2rem 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .brand-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .brand-header h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 3rem;
+            padding: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e9ecef;
+            min-height: 600px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            background: #f8f9fa;
+            padding: 15px;
+        }
+
+        .product-card h4 {
+            color: #1e3c72;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .product-features {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .product-features li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .product-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .inquiry-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            width: 100%;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .inquiry-btn:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        .floating-whatsapp:hover {
+            background: #128C7E;
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .dacus-section {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+        }
+
+        .gaia-section {
+            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mahindra Motors Ambala</h1>
+            <p>Your Trusted Partner for Premium Electric Scooters</p>
+            <p style="font-size: 1rem; margin-top: 1rem; opacity: 0.9;">📍 Near Baldev Nagar Chowk, Chandigarh Road, Opposite Rai Hospital, Ambala, Haryana 134007</p>
+        </div>
+    </header>
+
+    <div class="contact-banner">
+        <a href="https://wa.me/919416025162?text=Hi, I'm interested in your electric scooters. Please share more details.">
+            <div class="whatsapp-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.106"/>
+                </svg>
+            </div>
+            📞 Contact us: +91 9416025162 | Click here for WhatsApp
+        </a>
+    </div>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2>Our Electric Scooter Brands</h2>
+                
+                <!-- Dacus Section -->
+                <div class="brand-section">
+                    <div class="brand-header dacus-section">
+                        <h3>DACUS Electric Scooters</h3>
+                        <p>Crafted for urban lifestyle with efficient power systems</p>
+                    </div>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <img src="https://dacusev.com/wp-content/uploads/2024/04/WhatsApp-Image-2024-04-19-at-1.36.23-PM.jpeg" alt="Dacus Austra Pro+" class="product-image" loading="lazy">
+                            <h4>Austra Pro+</h4>
+                            <ul class="product-features">
+                                <li>Premium electric scooter</li>
+                                <li>Advanced power system</li>
+                                <li>Exceptional comfort</li>
+                                <li>Minimalist aesthetic</li>
+                            </ul>
+                            <a href="https://wa.me/919416025162?text=Hi, I'm interested in DACUS Austra Pro+. Please share more details." class="inquiry-btn">Inquire Now</a>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://dacusev.com/wp-content/uploads/2024/04/WhatsApp-Image-2024-04-19-at-7.55.17-PM-1.jpeg" alt="Dacus Austra Pro" class="product-image" loading="lazy">
+                            <h4>Austra Pro</h4>
+                            <ul class="product-features">
+                                <li>Urban mobility solution</li>
+                                <li>Enjoyable and nimble journey</li>
+                                <li>Environmental consciousness</li>
+                                <li>Make in India quality</li>
+                            </ul>
+                            <a href="https://wa.me/919416025162?text=Hi, I'm interested in DACUS Austra Pro. Please share more details." class="inquiry-btn">Inquire Now</a>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://dacusev.com/wp-content/uploads/2024/04/WhatsApp-Image-2024-04-19-at-2.27.12-PM-1.jpeg" alt="Dacus Austra" class="product-image" loading="lazy">
+                            <h4>Austra</h4>
+                            <ul class="product-features">
+                                <li>Lifestyle-tailored design</li>
+                                <li>Efficient performance</li>
+                                <li>Comfortable ride</li>
+                                <li>Eco-friendly transport</li>
+                            </ul>
+                            <a href="https://wa.me/919416025162?text=Hi, I'm interested in DACUS Austra. Please share more details." class="inquiry-btn">Inquire Now</a>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://dacusev.com/wp-content/uploads/2024/04/WhatsApp-Image-2024-04-19-at-7.55.15-PM-1.jpeg" alt="Dacus Gold Plus" class="product-image" loading="lazy">
+                            <h4>Gold Plus</h4>
+                            <ul class="product-features">
+                                <li>Premium gold variant</li>
+                                <li>Enhanced features</li>
+                                <li>Superior comfort</li>
+                                <li>Stylish design</li>
+                            </ul>
+                            <a href="https://wa.me/919416025162?text=Hi, I'm interested in DACUS Gold Plus. Please share more details." class="inquiry-btn">Inquire Now</a>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://dacusev.com/wp-content/uploads/2024/04/WhatsApp-Image-2024-04-19-at-7.55.15-PM-1.jpeg" alt="Dacus Gold" class="product-image" loading="lazy">
+                            <h4>Gold</h4>
+                            <ul class="product-features">
+                                <li>Reliable performance</li>
+                                <li>Cost-effective solution</li>
+                                <li>Durable build quality</li>
+                                <li>Easy maintenance</li>
+                            </ul>
+                            <a href="https://wa.me/919416025162?text=Hi, I'm interested in DACUS Gold. Please share more details." class="inquiry-btn">Inquire Now</a>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://dacusev.com/wp-content/uploads/2024/04/WhatsApp-Image-2024-04-19-at-7.55.16-PM-1.jpeg" alt="Dacus BRD" class="product-image" loading="lazy">
+                            <h4>BRD Model</h4>
+                            <ul class="product-features">
+                                <li>Reliable performance</li>
+                                <li>Durable build quality</li>
+                                <li>Cost-effective option</li>
+                                <li>Easy maintenance</li>
+                            </ul>
+                            <a href="https://wa.me/919416025162?text=Hi, I'm interested in DACUS BRD model. Please share more details." class="inquiry-btn">Inquire Now</a>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://dacusev.com/wp-content/uploads/2024/04/WhatsApp-Image-2024-04-19-at-7.55.17-PM-2.jpeg" alt="Dacus Sky Hawk" class="product-image" loading="lazy">
+                            <h4>Sky Hawk</h4>
+                            <ul class="product-features">
+                                <li>High-performance model</li>
+                                <li>Sporty design</li>
+                                <li>Advanced features</li>
+                                <li>Premium comfort</li>
+                            </ul>
+                            <a href="https://wa.me/919416025162?text=Hi, I'm interested in DACUS Sky Hawk. Please share more details." class="inquiry-btn">Inquire Now</a>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://dacusev.com/wp-content/uploads/2024/04/WhatsApp-Image-2024-04-19-at-7.55.19-PM.jpeg" alt="Dacus Elite" class="product-image" loading="lazy">
+                            <h4>Elite & More Models</h4>
+                            <ul class="product-features">
+                                <li>Elite premium model</li>
+                                <li>Prime variant</li>
+                                <li>BEKO model</li>
+                                <li>Complete range available</li>
+                            </ul>
+                            <a href="https://wa.me/919416025162?text=Hi, I'm interested in DACUS Elite and other models. Please share complete range details." class="inquiry-btn">View All Models</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gaia Section -->
+                <div class="brand-section">
+                    <div class="brand-header gaia-section">
+                        <h3>GAIA Electric Scooters</h3>
+                        <p>Your Future E-Bikes - Most Convenient & Cost-Friendly</p>
+                    </div>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <img src="https://gaiaelectric.in/wp-content/uploads/2022/06/PRODUCT1.jpg" alt="Gaia Spirit" class="product-image" loading="lazy">
+                            <h4>Gaia Spirit</h4>
+                            <ul class="product-features">
+                                <li>Available in 5 colors</li>
+                                <li>Gray, White, Red, Blue, Black</li>
+                                <li>Ample leg room</li>
+                                <li>Sleek & comfortable design</li>
+                            </ul>
+                            <a href="https://wa.me/919416025162?text=Hi, I'm interested in Gaia Spirit. Please share more details." class="inquiry-btn">Inquire Now</a>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://gaiaelectric.in/wp-content/uploads/2023/01/CLASSIC-WEB.jpg" alt="Gaia Classic" class="product-image" loading="lazy">
+                            <h4>Gaia Classic</h4>
+                            <ul class="product-features">
+                                <li>Classic design appeal</li>
+                                <li>Multiple color options</li>
+                                <li>Environmentally friendly</li>
+                                <li>Load compartment included</li>
+                            </ul>
+                            <a href="https://wa.me/919416025162?text=Hi, I'm interested in Gaia Classic. Please share more details." class="inquiry-btn">Inquire Now</a>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://gaiaelectric.in/wp-content/uploads/2022/06/PRODUCT3.jpg" alt="Gaia Dynamic" class="product-image" loading="lazy">
+                            <h4>Gaia Dynamic</h4>
+                            <ul class="product-features">
+                                <li>Dynamic red color</li>
+                                <li>Sporty appearance</li>
+                                <li>Enhanced performance</li>
+                                <li>Modern styling</li>
+                            </ul>
+                            <a href="https://wa.me/919416025162?text=Hi, I'm interested in Gaia Dynamic. Please share more details." class="inquiry-btn">Inquire Now</a>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://gaiaelectric.in/wp-content/uploads/2022/06/product4.jpg" alt="Gaia Storm" class="product-image" loading="lazy">
+                            <h4>Gaia Storm</h4>
+                            <ul class="product-features">
+                                <li>Storm white variant</li>
+                                <li>Powerful performance</li>
+                                <li>Advanced features</li>
+                                <li>Premium build quality</li>
+                            </ul>
+                            <a href="https://wa.me/919416025162?text=Hi, I'm interested in Gaia Storm. Please share more details." class="inquiry-btn">Inquire Now</a>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://gaiaelectric.in/wp-content/uploads/2022/06/product-2.jpg" alt="Gaia Legend" class="product-image" loading="lazy">
+                            <h4>Gaia Legend</h4>
+                            <ul class="product-features">
+                                <li>Legendary performance</li>
+                                <li>Gray, White, Black options</li>
+                                <li>Superior comfort</li>
+                                <li>Reliable technology</li>
+                            </ul>
+                            <a href="https://wa.me/919416025162?text=Hi, I'm interested in Gaia Legend. Please share more details." class="inquiry-btn">Inquire Now</a>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://gaiaelectric.in/wp-content/uploads/2022/08/ge1-home-page-model-banner-_2_-min.webp" alt="Gaia GE 1" class="product-image" loading="lazy">
+                            <h4>GE 1</h4>
+                            <ul class="product-features">
+                                <li>Entry-level model</li>
+                                <li>White color variant</li>
+                                <li>Cost-effective solution</li>
+                                <li>Easy to use</li>
+                            </ul>
+                            <a href="https://wa.me/919416025162?text=Hi, I'm interested in Gaia GE 1. Please share more details." class="inquiry-btn">Inquire Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin: 3rem 0; padding: 2rem; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #1e3c72; margin-bottom: 1rem;">Battery Options Available</h3>
+                    <p style="font-size: 1.1rem; color: #666; margin-bottom: 1.5rem;">Choose from Lead Acid or Lithium Ferrous Phosphate batteries</p>
+                    <a href="https://wa.me/919416025162?text=Hi, I want to know about battery options for electric scooters. Please provide details." class="inquiry-btn" style="max-width: 300px;">Get Battery Details</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mahindra Motors Ambala. All rights reserved.</p>
+            <p>Authorized dealer for DACUS & GAIA Electric Scooters</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919416025162?text=Hi, I'm interested in your electric scooters. Please share more details." class="floating-whatsapp">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.106"/>
+        </svg>
+    </a>
+</body>
+</html>
